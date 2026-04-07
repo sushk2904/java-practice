@@ -1,0 +1,76 @@
+//7a
+
+public class CustomException extends Exception {
+    
+    // Constructor that passes the message to the parent Exception class
+    public CustomException(String message) {
+        super(message);
+    }
+
+    public static void main(String args[]) {
+        // Let's test it with a CGPA that is too low
+        double cgpa = 4.2; 
+        
+        try {
+            // Check the promotion criteria
+            if (cgpa < 4.5) {
+                // Throw our custom exception if the condition is met
+                throw new CustomException("Student cannot promote. CGPA is strictly less than 4.5");
+            }
+            
+            // If the code reaches here, no exception was thrown
+            System.out.println("Student successfully promoted to the next academic year!");
+            
+        } 
+        catch (CustomException e) {
+            // Catch and display our specific custom error
+            System.out.println("PromotionFailedException: " + e.getMessage());
+        } 
+        catch (Exception e) {
+            // It is always good practice to have a fallback catch block
+            System.out.println("General Error: " + e.getMessage());
+        }
+    }
+}
+
+
+
+//7b
+import java.util.Scanner;
+
+
+public class PalindromeCheck {
+    public static void main(String[] args) {
+        
+        // BLOCK 1: INPUT COLLECTION
+        // We initialize the Scanner to read from the standard input stream (keyboard).
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String original = scanner.nextLine();
+        
+        
+        // BLOCK 2: THE REVERSAL LOGIC
+        // Step A: Strings in Java are immutable (unchangeable). To flip the word, 
+        // we "wrap" the string into a StringBuffer, which allows character manipulation.
+        StringBuffer sb = new StringBuffer(original);
+        
+        // Step B: We call the built-in .reverse() method to flip the sequence.
+        // Step C: We convert it back .toString() so it can be stored as a standard String.
+        String reversed = sb.reverse().toString();
+        
+        
+        // BLOCK 3: THE COMPARISON
+        // We use .equalsIgnoreCase() to ensure 'A' matches 'a'.
+        // This makes the check "case-insensitive," which is standard for palindromes.
+        if (original.equalsIgnoreCase(reversed)) {
+            System.out.println(original + " is a palindrome.");
+        } else {
+            System.out.println(original + " is NOT a palindrome.");
+        }
+        
+        
+        // BLOCK 4: CLEANUP
+        // Closing the scanner releases the memory resources tied to the input stream.
+        scanner.close();
+    }
+}

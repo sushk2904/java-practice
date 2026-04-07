@@ -1,0 +1,7 @@
+public:The class/variable can be accessed from anywhere, even from a completely different package.
+
+protected: Can be accessed by classes in the same package, OR by child classes (subclasses) in different packages.
+
+default (No keyword):If you don't write an access modifier, it defaults to this. It can only be accessed by classes living entirely within the same package.
+
+private: Can strictly only be accessed within the exact same class it was created in.

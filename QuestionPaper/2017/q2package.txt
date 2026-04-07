@@ -1,0 +1,28 @@
+//*The Benefits of Using Packages
+
+Organization: It groups related classes together (e.g., all database classes in one package, all security classes in another).
+
+Prevents Naming Conflicts: You cannot have two files named User.java in the same folder. But with packages, you can have a frontend.User and a database.User living peacefully in the same project.
+
+Access Control: It allows you to use the default and protected access modifiers to hide sensitive code from outside folders.
+
+// We are putting this class inside a package named 'utilities'
+package utilities; 
+
+public class MyTool {
+    // The method must be public so outside files can see it
+    public void printMessage() {
+        System.out.println("Hello from the utilities package!");
+    }
+}
+
+// We import the specific class from the utilities package
+import utilities.MyTool; 
+
+public class Main {
+    public static void main(String[] args) {
+        // Now we can use it just like a normal object!
+        MyTool tool = new MyTool();
+        tool.printMessage(); 
+    }
+}

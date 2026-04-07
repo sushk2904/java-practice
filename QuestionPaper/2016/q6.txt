@@ -1,0 +1,3 @@
+this: Points to the current object you are working inside. You use it when a method parameter has the exact same name as your class variable, and you need to tell Java which one is which.
+
+super: Points to the parent class object. You use it when a child class wants to call a method or constructor that belongs to its parent

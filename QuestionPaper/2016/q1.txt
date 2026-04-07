@@ -1,0 +1,54 @@
+//* In Java, both Abstract Classes and Interfaces are used to achieve abstraction (hiding the complex implementation details and showing only the essential features). However, they serve entirely different architectural purposes.
+
+1. an abstract class is a restricted class that cannot be used to create objects. 
+A class can extend only one abstract class.
+It is designed to act as a blueprint for other classes, allowing you to define a common structure and shared behavior for a group of related subclasses.
+Constructors are supported 
+2. Use an Interface 
+It is created when a class only has abstract methods.
+Constructors are not supported
+A class can implement multiple interfaces.
+
+
+
+
+Abstract method classs cannot create objects
+abstract class Car 
+{
+    public abstract void drive();
+
+    public void playmusic(){
+        System.out.println("Music playing")
+    }
+
+class Wagonr extends Car{
+    public void drive(){
+        System.out.println("car is driving")
+
+    }
+}
+}
+public class Main {
+    public static void main(String args[])
+    {
+Car obj1 = new Wagonr();
+obj1.drive();
+obj1.playmusic();
+    }
+    }
+
+
+Interface 
+
+interface A {
+    void drive();
+    void start();
+}
+
+class B implements A {
+    public void drive(){
+
+    }
+}
+
+*//

@@ -24,9 +24,8 @@ public class Runnablemethod {
         Runnable obj1 = new A();
         Runnable obj2 = new B();
 
-        Runnable obj3 = () > 
+        Runnable obj3 = () -> 
         {
-            public void run(){
                 for(int i =1; i<=5; i++){
                 System.out.println("Namaste");
         }
