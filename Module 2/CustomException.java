@@ -19,6 +19,9 @@ public class CustomException extends Exception {
         catch(CustomException e){
             System.out.println("CustomException: " + e.getMessage());
         }
+        catch(Exception e){
+            System.out.println("Exception here is:" + e.getMessage());
+        }
 
     }
 
